@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/setting_view_image_item_container"
+    style="@style/SettingViewContainer" >
+
+    <ImageView
+        android:id="@+id/setting_view_image_item_icon"
+        style="@style/SettingViewIcon" />
+
+    <TextView
+        android:id="@+id/setting_view_image_item_title"
+        style="@style/SettingViewTitleH" />
+
+    <ImageView
+        android:id="@+id/setting_view_image_item_image"
+        style="@style/SettingViewImage" />
+
+    <ImageView
+        android:id="@+id/setting_view_image_item_arrow"
+        style="@style/SettingViewArrow" />
+
+</LinearLayout>

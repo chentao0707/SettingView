@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="setting_view_lr_padding">10dp</dimen>
+    <dimen name="setting_view_tb_padding">5dp</dimen>
+    <dimen name="setting_view_title_size">16sp</dimen>
+    <dimen name="setting_view_subtitle_size">14sp</dimen>
+    <dimen name="switch_button_width">50dp</dimen>
+    <dimen name="switch_button_height">30dp</dimen>
+
+</resources>

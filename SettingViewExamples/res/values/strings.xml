@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="app_name">SettingViewExamples</string>
+    <string name="title">SettingViewExamples Title</string>
+    <string name="subTitle">SettingViewExamples SubTitle</string>
+    <string name="qq">QQ: 1076559197</string>
+    <string name="web">https://github.com/SkillCollege/</string>
+
+</resources>

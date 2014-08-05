@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF7F7F7"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <com.dtr.settingview.lib.item.ImageItemView
+            android:id="@+id/xml_layout_image_item"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/setting_view_min_height"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            app:background="@drawable/setting_view_item_selector2"
+            app:image="@drawable/icon_info"
+            app:subTitle="@string/subTitle"
+            app:title="@string/app_name" />
+
+        <com.dtr.settingview.lib.item.BasicItemViewH
+            android:id="@+id/xml_layout_basic_h_item"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/setting_view_min_height"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            app:background="@drawable/setting_view_item_selector"
+            app:drawable="@drawable/icon10"
+            app:subTitle="@string/subTitle"
+            app:title="@string/title" />
+
+        <com.dtr.settingview.lib.item.BasicItemViewV
+            android:id="@+id/xml_layout_basic_v_item"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/setting_view_min_height"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            app:background="@drawable/setting_view_item_selector"
+            app:drawable="@drawable/icon10"
+            app:subTitle="@string/subTitle"
+            app:title="@string/title" />
+
+        <com.dtr.settingview.lib.item.SwitchItemView
+            android:id="@+id/xml_layout_switch_item"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/setting_view_min_height"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            app:title="@string/title"
+            app:titleSize="12sp" />
+
+        <com.dtr.settingview.lib.item.CheckItemViewH
+            android:id="@+id/xml_layout_check_item1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/setting_view_min_height"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            app:background="@drawable/setting_view_item_selector2"
+            app:checked="false"
+            app:subTitle="@string/subTitle"
+            app:title="@string/title" />
+
+        <com.dtr.settingview.lib.item.CheckItemViewV
+            android:id="@+id/xml_layout_check_item2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/setting_view_min_height"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            app:background="@drawable/setting_view_item_selector2"
+            app:checked="true"
+            app:clickable="false"
+            app:subTitle="@string/subTitle"
+            app:title="@string/title" />
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/setting_view_switch_item_container"
+    style="@style/SettingViewContainer" >
+
+    <ImageView
+        android:id="@+id/setting_view_switch_item_icon"
+        style="@style/SettingViewIcon" />
+
+    <TextView
+        android:id="@+id/setting_view_switch_item_title"
+        style="@style/SettingViewTitleH" />
+
+    <com.dtr.settingview.lib.item.SwitchButton
+        android:id="@+id/setting_view_switch_item_switch"
+        style="@style/SettingViewSwitch" />
+
+</LinearLayout>

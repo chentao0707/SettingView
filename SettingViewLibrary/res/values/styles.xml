@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="SettingViewContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/setting_view_min_height</item>
+        <item name="android:background">@drawable/setting_view_item_selector</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="SettingViewIcon">
+        <item name="android:layout_width">@dimen/setting_view_min_height</item>
+        <item name="android:layout_height">@dimen/setting_view_min_height</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:scaleType">centerInside</item>
+    </style>
+
+    <style name="SettingViewRight">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:layout_marginRight">@dimen/setting_view_lr_padding</item>
+    </style>
+
+    <style name="SettingViewArrow" parent="@style/SettingViewRight">
+        <item name="android:src">@drawable/setting_view_arrow</item>
+    </style>
+
+    <style name="SettingViewCheck" parent="@style/SettingViewRight">
+        <item name="android:src">@drawable/setting_view_check</item>
+    </style>
+
+    <style name="SettingViewSwitch">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">@dimen/setting_view_lr_padding</item>
+    </style>
+
+    <style name="SettingViewTextH">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingLeft">@dimen/setting_view_lr_padding</item>
+        <item name="android:paddingRight">@dimen/setting_view_lr_padding</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="SettingViewTitleH" parent="@style/SettingViewTextH">
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textColor">@color/setting_view_item_title_text</item>
+        <item name="android:textSize">@dimen/setting_view_title_size</item>
+    </style>
+
+    <style name="SettingViewSubtitleH" parent="@style/SettingViewTextH">
+        <item name="android:gravity">right|center_vertical</item>
+        <item name="android:textColor">@color/setting_view_item_subtitle_text</item>
+        <item name="android:textSize">@dimen/setting_view_subtitle_size</item>
+    </style>
+
+    <style name="SettingViewTextV">
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:paddingLeft">@dimen/setting_view_lr_padding</item>
+        <item name="android:paddingRight">@dimen/setting_view_lr_padding</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="SettingViewTitleV" parent="@style/SettingViewTextV">
+        <item name="android:gravity">left|bottom</item>
+        <item name="android:textSize">@dimen/setting_view_title_size</item>
+        <item name="android:textColor">@color/setting_view_item_title_text</item>
+    </style>
+
+    <style name="SettingViewSubtitleV" parent="@style/SettingViewTextV">
+        <item name="android:gravity">left|top</item>
+        <item name="android:textSize">@dimen/setting_view_subtitle_size</item>
+        <item name="android:textColor">@color/setting_view_item_subtitle_text</item>
+    </style>
+
+    <style name="SettingViewImage">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginRight">@dimen/setting_view_tb_padding</item>
+        <item name="android:scaleType">centerInside</item>
+    </style>
+
+</resources>

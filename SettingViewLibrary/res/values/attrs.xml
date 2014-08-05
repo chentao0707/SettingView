@@ -1,0 +1,24 @@
+<resources>
+
+    <!-- SettingView -->
+    <declare-styleable name="SettingView">
+        <attr name="iOSStyle" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="SettingViewItem">
+        <attr name="title" format="string" />
+        <attr name="subTitle" format="string" />
+        <attr name="titleColor" format="reference" />
+        <attr name="subTitleColor" format="reference" />
+        <attr name="titleSize" format="reference|dimension" />
+        <attr name="subTitleSize" format="reference|dimension" />
+        <attr name="drawable" format="reference" />
+        <attr name="arrow" format="reference" />
+        <attr name="check" format="reference" />
+        <attr name="image" format="reference" />
+        <attr name="clickable" format="boolean" />
+        <attr name="checked" format="boolean" />
+        <attr name="background" format="reference" />
+    </declare-styleable>
+    <!-- SettingView -->
+
+</resources>

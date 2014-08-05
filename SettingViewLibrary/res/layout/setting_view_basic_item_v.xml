@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/setting_view_basic_item_v_container"
+    style="@style/SettingViewContainer" >
+
+    <ImageView
+        android:id="@+id/setting_view_basic_item_v_icon"
+        style="@style/SettingViewIcon" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/setting_view_basic_item_v_title"
+            style="@style/SettingViewTitleV" />
+
+        <TextView
+            android:id="@+id/setting_view_basic_item_v_subtitle"
+            style="@style/SettingViewSubtitleV" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/setting_view_basic_item_v_arrow"
+        style="@style/SettingViewArrow" />
+
+</LinearLayout>
