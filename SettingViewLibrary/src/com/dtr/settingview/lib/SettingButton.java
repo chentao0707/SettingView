@@ -8,6 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.dtr.settingview.lib.entity.SettingData;
 import com.dtr.settingview.lib.entity.SettingViewItemData;
 import com.dtr.settingview.lib.item.BasicItemViewH;
 import com.dtr.settingview.lib.item.BasicItemViewV;
@@ -44,6 +45,28 @@ public class SettingButton extends LinearLayout {
 		initItemView(data);
 		// Add Bottom Divider
 		addView(mBottomDivider, dividerLps);
+	}
+
+	public void refreshItemData(SettingData data) {
+		FrameLayout itemView = (FrameLayout) getChildAt(1);
+
+		if (itemView instanceof SwitchItemView) {
+			((SwitchItemView) itemView).fillData(data);
+		} else {
+			if (itemView instanceof BasicItemViewH) {
+				((BasicItemViewH) itemView).fillData(data);
+			} else if (itemView instanceof BasicItemViewV) {
+				((BasicItemViewV) itemView).fillData(data);
+			} else if (itemView instanceof ImageItemView) {
+				((ImageItemView) itemView).fillData(data);
+			} else if (itemView instanceof CheckItemViewH) {
+				((CheckItemViewH) itemView).fillData(data);
+			} else if (itemView instanceof CheckItemViewV) {
+				((CheckItemViewV) itemView).fillData(data);
+			}
+		}
+
+		invalidate();
 	}
 
 	private void initItemView(SettingViewItemData data) {
@@ -89,8 +112,7 @@ public class SettingButton extends LinearLayout {
 			}
 		}
 
-		int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.setting_view_min_height), getResources()
-				.getDisplayMetrics());
+		int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.setting_view_min_height), getResources().getDisplayMetrics());
 		LinearLayout.LayoutParams lps = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, height);
 
 		addView(itemView, lps);

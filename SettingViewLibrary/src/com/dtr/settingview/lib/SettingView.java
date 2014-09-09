@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 
+import com.dtr.settingview.lib.entity.SettingData;
 import com.dtr.settingview.lib.entity.SettingViewItemData;
 import com.dtr.settingview.lib.item.BasicItemViewH;
 import com.dtr.settingview.lib.item.BasicItemViewV;
@@ -85,6 +86,28 @@ public class SettingView extends LinearLayout {
 		}
 	}
 
+	public void refreshItemData(SettingData data, int index) {
+		FrameLayout itemView = (FrameLayout) getChildAt(2 * index + 1);
+
+		if (itemView instanceof SwitchItemView) {
+			((SwitchItemView) itemView).fillData(data);
+		} else {
+			if (itemView instanceof BasicItemViewH) {
+				((BasicItemViewH) itemView).fillData(data);
+			} else if (itemView instanceof BasicItemViewV) {
+				((BasicItemViewV) itemView).fillData(data);
+			} else if (itemView instanceof ImageItemView) {
+				((ImageItemView) itemView).fillData(data);
+			} else if (itemView instanceof CheckItemViewH) {
+				((CheckItemViewH) itemView).fillData(data);
+			} else if (itemView instanceof CheckItemViewV) {
+				((CheckItemViewV) itemView).fillData(data);
+			}
+		}
+
+		invalidate();
+	}
+
 	private void addDivider(boolean iOSStylable) {
 		ImageView divider = new ImageView(mContext);
 		divider.setScaleType(ScaleType.FIT_XY);
@@ -95,10 +118,8 @@ public class SettingView extends LinearLayout {
 		lps.gravity = Gravity.RIGHT;
 
 		if (iOSStyleable) {
-			int paddingLeft = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.setting_view_min_height), getResources()
-					.getDisplayMetrics())
-					+ (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.setting_view_lr_padding), getResources()
-							.getDisplayMetrics());
+			int paddingLeft = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.setting_view_min_height), getResources().getDisplayMetrics())
+					+ (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.setting_view_lr_padding), getResources().getDisplayMetrics());
 			divider.setPadding(paddingLeft, 0, 0, 0);
 		}
 
@@ -147,8 +168,7 @@ public class SettingView extends LinearLayout {
 			}
 		}
 
-		int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.setting_view_min_height), getResources()
-				.getDisplayMetrics());
+		int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.setting_view_min_height), getResources().getDisplayMetrics());
 		LinearLayout.LayoutParams lps = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, height);
 
 		addView(itemView, lps);
