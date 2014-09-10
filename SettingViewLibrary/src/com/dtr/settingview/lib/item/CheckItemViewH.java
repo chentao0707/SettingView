@@ -121,8 +121,7 @@ public class CheckItemViewH extends FrameLayout {
 			}
 
 			if (a.hasValue(R.styleable.SettingViewItem_titleSize)) {
-				int textSize = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, a.getDimensionPixelSize(R.styleable.SettingViewItem_titleSize, 16), getResources()
-						.getDisplayMetrics());
+				int textSize = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, a.getDimensionPixelSize(R.styleable.SettingViewItem_titleSize, 16), getResources().getDisplayMetrics());
 				mTitle.setTextSize(textSize);
 			}
 
@@ -194,5 +193,17 @@ public class CheckItemViewH extends FrameLayout {
 
 	public void setOnCheckItemChangedListener(onCheckItemChangedListener listener) {
 		mChangedListener = listener;
+	}
+
+	public TextView getmTitle() {
+		return mTitle;
+	}
+
+	public ImageView getmDrawable() {
+		return mDrawable;
+	}
+
+	public ImageView getmCheck() {
+		return mCheck;
 	}
 }

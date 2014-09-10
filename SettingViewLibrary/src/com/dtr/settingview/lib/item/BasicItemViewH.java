@@ -106,8 +106,7 @@ public class BasicItemViewH extends FrameLayout {
 			}
 
 			if (a.hasValue(R.styleable.SettingViewItem_subTitleSize)) {
-				int textSize = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, a.getDimensionPixelSize(R.styleable.SettingViewItem_subTitleSize, 14), getResources()
-						.getDisplayMetrics());
+				int textSize = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, a.getDimensionPixelSize(R.styleable.SettingViewItem_subTitleSize, 14), getResources().getDisplayMetrics());
 				mSubTitle.setTextSize(textSize);
 			}
 
@@ -126,8 +125,7 @@ public class BasicItemViewH extends FrameLayout {
 			}
 
 			if (a.hasValue(R.styleable.SettingViewItem_titleSize)) {
-				int textSize = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, a.getDimensionPixelSize(R.styleable.SettingViewItem_titleSize, 16), getResources()
-						.getDisplayMetrics());
+				int textSize = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, a.getDimensionPixelSize(R.styleable.SettingViewItem_titleSize, 16), getResources().getDisplayMetrics());
 				mTitle.setTextSize(textSize);
 			}
 
@@ -191,5 +189,17 @@ public class BasicItemViewH extends FrameLayout {
 				mSubTitle.setTextSize(subTitleSize);
 			}
 		}
+	}
+
+	public ImageView getmDrawable() {
+		return mDrawable;
+	}
+
+	public TextView getmTitle() {
+		return mTitle;
+	}
+
+	public TextView getmSubTitle() {
+		return mSubTitle;
 	}
 }

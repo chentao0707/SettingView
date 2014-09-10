@@ -49,7 +49,7 @@ public class QQStyleActivity extends Activity {
 			@Override
 			public void onSettingButtonClick() {
 				// TODO Auto-generated method stub
-				Toast.makeText(QQStyleActivity.this, "点击了SettingButton1", Toast.LENGTH_SHORT).show();
+				mSettingButton1.modifyInfo(getResources().getDrawable(R.drawable.icon03));
 			}
 		});
 

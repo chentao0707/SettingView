@@ -39,6 +39,11 @@ public class IosStyleActivity extends Activity {
 			public void onItemClick(int index) {
 				// TODO Auto-generated method stub
 				Toast.makeText(IosStyleActivity.this, "第" + index + "项被点击", Toast.LENGTH_SHORT).show();
+				if (index == 4) {
+					mSettingView1.modifySubTitle("中国联通", index);
+				} else if (index == 2) {
+					mSettingView1.modifySubTitle("关闭", index);
+				}
 			}
 		});
 

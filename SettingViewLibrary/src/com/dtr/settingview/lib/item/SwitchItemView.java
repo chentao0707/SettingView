@@ -168,4 +168,16 @@ public class SwitchItemView extends FrameLayout {
 	public void setOnSwitchItemChangedListener(onSwitchItemChangedListener listener) {
 		mChangedListener = listener;
 	}
+
+	public TextView getmTitle() {
+		return mTitle;
+	}
+
+	public SwitchButton getmSwitch() {
+		return mSwitch;
+	}
+
+	public ImageView getmDrawable() {
+		return mDrawable;
+	}
 }

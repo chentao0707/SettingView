@@ -232,4 +232,20 @@ public class CheckItemViewV extends FrameLayout {
 	public void setOnCheckItemChangedListener(onCheckItemChangedListener listener) {
 		mChangedListener = listener;
 	}
+
+	public TextView getmTitle() {
+		return mTitle;
+	}
+
+	public TextView getmSubTitle() {
+		return mSubTitle;
+	}
+
+	public ImageView getmDrawable() {
+		return mDrawable;
+	}
+
+	public ImageView getmCheck() {
+		return mCheck;
+	}
 }

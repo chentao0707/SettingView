@@ -166,4 +166,16 @@ public class ImageItemView extends FrameLayout {
 			}
 		}
 	}
+
+	public ImageView getmImage() {
+		return mImage;
+	}
+
+	public ImageView getmDrawable() {
+		return mDrawable;
+	}
+
+	public TextView getmTitle() {
+		return mTitle;
+	}
 }

@@ -5,6 +5,7 @@ import java.util.List;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -14,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 
-import com.dtr.settingview.lib.entity.SettingData;
 import com.dtr.settingview.lib.entity.SettingViewItemData;
 import com.dtr.settingview.lib.item.BasicItemViewH;
 import com.dtr.settingview.lib.item.BasicItemViewV;
@@ -84,28 +84,6 @@ public class SettingView extends LinearLayout {
 			// Add Bottom Divider
 			addView(mBottomDivider, dividerLps);
 		}
-	}
-
-	public void refreshItemData(SettingData data, int index) {
-		FrameLayout itemView = (FrameLayout) getChildAt(2 * index + 1);
-
-		if (itemView instanceof SwitchItemView) {
-			((SwitchItemView) itemView).fillData(data);
-		} else {
-			if (itemView instanceof BasicItemViewH) {
-				((BasicItemViewH) itemView).fillData(data);
-			} else if (itemView instanceof BasicItemViewV) {
-				((BasicItemViewV) itemView).fillData(data);
-			} else if (itemView instanceof ImageItemView) {
-				((ImageItemView) itemView).fillData(data);
-			} else if (itemView instanceof CheckItemViewH) {
-				((CheckItemViewH) itemView).fillData(data);
-			} else if (itemView instanceof CheckItemViewV) {
-				((CheckItemViewV) itemView).fillData(data);
-			}
-		}
-
-		invalidate();
 	}
 
 	private void addDivider(boolean iOSStylable) {
@@ -188,5 +166,65 @@ public class SettingView extends LinearLayout {
 
 	public void setOnSettingViewItemSwitchListener(onSettingViewItemSwitchListener listener) {
 		this.mItemSwitchListener = listener;
+	}
+
+	public FrameLayout getItemView(int index) {
+		return (FrameLayout) getChildAt(2 * index + 1);
+	}
+
+	public void modifyTitle(String title, int index) {
+		FrameLayout itemView = getItemView(index);
+		if (itemView instanceof SwitchItemView) {
+			((SwitchItemView) itemView).getmTitle().setText(title);
+		} else {
+			if (itemView instanceof BasicItemViewH) {
+				((BasicItemViewH) itemView).getmTitle().setText(title);
+			} else if (itemView instanceof BasicItemViewV) {
+				((BasicItemViewV) itemView).getmTitle().setText(title);
+			} else if (itemView instanceof ImageItemView) {
+				((ImageItemView) itemView).getmTitle().setText(title);
+			} else if (itemView instanceof CheckItemViewH) {
+				((CheckItemViewH) itemView).getmTitle().setText(title);
+			} else if (itemView instanceof CheckItemViewV) {
+				((CheckItemViewV) itemView).getmTitle().setText(title);
+			}
+		}
+	}
+
+	public void modifySubTitle(String subTitle, int index) {
+		FrameLayout itemView = getItemView(index);
+		if (itemView instanceof BasicItemViewH) {
+			((BasicItemViewH) itemView).getmSubTitle().setText(subTitle);
+		} else if (itemView instanceof BasicItemViewV) {
+			((BasicItemViewV) itemView).getmSubTitle().setText(subTitle);
+		} else if (itemView instanceof CheckItemViewV) {
+			((CheckItemViewV) itemView).getmSubTitle().setText(subTitle);
+		}
+	}
+
+	public void modifyDrawable(Drawable drawable, int index) {
+		FrameLayout itemView = getItemView(index);
+		if (itemView instanceof SwitchItemView) {
+			((SwitchItemView) itemView).getmDrawable().setImageDrawable(drawable);
+		} else {
+			if (itemView instanceof BasicItemViewH) {
+				((BasicItemViewH) itemView).getmDrawable().setImageDrawable(drawable);
+			} else if (itemView instanceof BasicItemViewV) {
+				((BasicItemViewV) itemView).getmDrawable().setImageDrawable(drawable);
+			} else if (itemView instanceof ImageItemView) {
+				((ImageItemView) itemView).getmDrawable().setImageDrawable(drawable);
+			} else if (itemView instanceof CheckItemViewH) {
+				((CheckItemViewH) itemView).getmDrawable().setImageDrawable(drawable);
+			} else if (itemView instanceof CheckItemViewV) {
+				((CheckItemViewV) itemView).getmDrawable().setImageDrawable(drawable);
+			}
+		}
+	}
+
+	public void modifyInfo(Drawable drawable, int index) {
+		FrameLayout itemView = getItemView(index);
+		if (itemView instanceof ImageItemView) {
+			((ImageItemView) itemView).getmImage().setImageDrawable(drawable);
+		}
 	}
 }

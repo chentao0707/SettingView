@@ -1,6 +1,7 @@
 package com.dtr.settingview.lib;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
@@ -8,7 +9,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.dtr.settingview.lib.entity.SettingData;
 import com.dtr.settingview.lib.entity.SettingViewItemData;
 import com.dtr.settingview.lib.item.BasicItemViewH;
 import com.dtr.settingview.lib.item.BasicItemViewV;
@@ -45,28 +45,6 @@ public class SettingButton extends LinearLayout {
 		initItemView(data);
 		// Add Bottom Divider
 		addView(mBottomDivider, dividerLps);
-	}
-
-	public void refreshItemData(SettingData data) {
-		FrameLayout itemView = (FrameLayout) getChildAt(1);
-
-		if (itemView instanceof SwitchItemView) {
-			((SwitchItemView) itemView).fillData(data);
-		} else {
-			if (itemView instanceof BasicItemViewH) {
-				((BasicItemViewH) itemView).fillData(data);
-			} else if (itemView instanceof BasicItemViewV) {
-				((BasicItemViewV) itemView).fillData(data);
-			} else if (itemView instanceof ImageItemView) {
-				((ImageItemView) itemView).fillData(data);
-			} else if (itemView instanceof CheckItemViewH) {
-				((CheckItemViewH) itemView).fillData(data);
-			} else if (itemView instanceof CheckItemViewV) {
-				((CheckItemViewV) itemView).fillData(data);
-			}
-		}
-
-		invalidate();
 	}
 
 	private void initItemView(SettingViewItemData data) {
@@ -132,5 +110,65 @@ public class SettingButton extends LinearLayout {
 
 	public void setOnSettingButtonSwitchListener(onSettingButtonSwitchListener listener) {
 		this.mSettingButtonSwitchListener = listener;
+	}
+
+	public FrameLayout getItemView() {
+		return (FrameLayout) getChildAt(1);
+	}
+
+	public void modifyTitle(String title) {
+		FrameLayout itemView = getItemView();
+		if (itemView instanceof SwitchItemView) {
+			((SwitchItemView) itemView).getmTitle().setText(title);
+		} else {
+			if (itemView instanceof BasicItemViewH) {
+				((BasicItemViewH) itemView).getmTitle().setText(title);
+			} else if (itemView instanceof BasicItemViewV) {
+				((BasicItemViewV) itemView).getmTitle().setText(title);
+			} else if (itemView instanceof ImageItemView) {
+				((ImageItemView) itemView).getmTitle().setText(title);
+			} else if (itemView instanceof CheckItemViewH) {
+				((CheckItemViewH) itemView).getmTitle().setText(title);
+			} else if (itemView instanceof CheckItemViewV) {
+				((CheckItemViewV) itemView).getmTitle().setText(title);
+			}
+		}
+	}
+
+	public void modifySubTitle(String subTitle) {
+		FrameLayout itemView = getItemView();
+		if (itemView instanceof BasicItemViewH) {
+			((BasicItemViewH) itemView).getmSubTitle().setText(subTitle);
+		} else if (itemView instanceof BasicItemViewV) {
+			((BasicItemViewV) itemView).getmSubTitle().setText(subTitle);
+		} else if (itemView instanceof CheckItemViewV) {
+			((CheckItemViewV) itemView).getmSubTitle().setText(subTitle);
+		}
+	}
+
+	public void modifyDrawable(Drawable drawable) {
+		FrameLayout itemView = getItemView();
+		if (itemView instanceof SwitchItemView) {
+			((SwitchItemView) itemView).getmDrawable().setImageDrawable(drawable);
+		} else {
+			if (itemView instanceof BasicItemViewH) {
+				((BasicItemViewH) itemView).getmDrawable().setImageDrawable(drawable);
+			} else if (itemView instanceof BasicItemViewV) {
+				((BasicItemViewV) itemView).getmDrawable().setImageDrawable(drawable);
+			} else if (itemView instanceof ImageItemView) {
+				((ImageItemView) itemView).getmDrawable().setImageDrawable(drawable);
+			} else if (itemView instanceof CheckItemViewH) {
+				((CheckItemViewH) itemView).getmDrawable().setImageDrawable(drawable);
+			} else if (itemView instanceof CheckItemViewV) {
+				((CheckItemViewV) itemView).getmDrawable().setImageDrawable(drawable);
+			}
+		}
+	}
+
+	public void modifyInfo(Drawable drawable) {
+		FrameLayout itemView = getItemView();
+		if (itemView instanceof ImageItemView) {
+			((ImageItemView) itemView).getmImage().setImageDrawable(drawable);
+		}
 	}
 }
